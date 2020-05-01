@@ -29,11 +29,11 @@ public class Movie {
 	String title;
 
 	@Enumerated(EnumType.STRING)
-	@Column(length=20)
+	@Column(length = 20)
 	MovieType type;
 
 	String director;
-	@JsonFormat(pattern="yyyy")
+	@JsonFormat(pattern = "yyyy")
 	Date year;
 	String actors;
 	String language;
