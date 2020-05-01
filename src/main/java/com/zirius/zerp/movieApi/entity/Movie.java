@@ -1,6 +1,6 @@
 package com.zirius.zerp.movieApi.entity;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 @Entity
 @Table(name = "movies")
@@ -28,7 +33,8 @@ public class Movie {
 	MovieType type;
 
 	String director;
-	LocalDate year;
+	@JsonFormat(pattern="yyyy")
+	Date year;
 	String actors;
 	String language;
 	String country;
@@ -65,11 +71,11 @@ public class Movie {
 		this.type = type;
 	}
 
-	public LocalDate getYear() {
+	public Date getYear() {
 		return year;
 	}
 
-	public void setYear(LocalDate year) {
+	public void setYear(Date year) {
 		this.year = year;
 	}
 
