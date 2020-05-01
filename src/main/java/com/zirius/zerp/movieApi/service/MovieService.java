@@ -46,7 +46,7 @@ public class MovieService {
 
 	public List<Movie> getLocalDBMovie(MovieType type, Date year, String title) {
 		year = setFixedDate(year);
-		return (List<Movie>) movieRepo.findByTypeOrYearAndTitleContaining(type, year, title);
+		return (List<Movie>) movieRepo.findByTypeAndYearAndTitleContaining(type, year, title);
 	}
 
 	@Transactional

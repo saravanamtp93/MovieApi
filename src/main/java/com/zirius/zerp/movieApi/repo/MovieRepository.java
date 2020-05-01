@@ -10,5 +10,5 @@ import com.zirius.zerp.movieApi.entity.MovieType;
 
 public interface MovieRepository extends CrudRepository<Movie, Long> {
 
-	public List<Movie> findByTypeOrYearAndTitleContaining(MovieType type, Date year, String title);
+	public List<Movie> findByTypeAndYearAndTitleContaining(MovieType type, Date year, String title);
 }
