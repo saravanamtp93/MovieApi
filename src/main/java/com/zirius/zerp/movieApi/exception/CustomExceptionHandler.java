@@ -16,6 +16,6 @@ public class CustomExceptionHandler {
 	}
 	@ExceptionHandler(ConstraintViolationException.class)
 	public ResponseEntity<?> validationExcepton(ConstraintViolationException constraintViolationException){
-		return new ResponseEntity<String>(constraintViolationException.getLocalizedMessage(),HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>(constraintViolationException.getMessage(),HttpStatus.BAD_REQUEST);
 	}
 }
